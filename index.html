@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SneakerShop Women</title> <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <h2 class="logo">SneakerShop Women</h2>
+  <nav class="nav">
+    <a href="#home">Главная</a>
+    <a href="#about">О нас</a>
+    <a href="#products">Товары</a>
+    <a href="#register">Регистрация</a>
+    <a href="#cart" class="cartlink">Корзина (<span id="count">0</span>)</a>
+  </nav>
+</header>
+
+<section id="home" class="page home">
+  <div class="box">
+    <h1>Женский магазин кроссовок</h1>
+    <p>Стиль и комфорт каждый день.</p>
+    <a class="btn" href="#products">К товарам</a>
+  </div>
+</section>
+
+<section id="about" class="page">
+  <div class="box">
+    <h2>О нас</h2>
+    <p>SneakerShop — магазин женских кроссовок для комфорта и стиля.</p>
+    <p><b>Основатель:</b> Туркбаева Акмарал</p>
+  </div>
+</section>
+
+<section id="products" class="page">
+  <div class="box big">
+    <h2>Товары</h2>
+    <p class="muted">Нажимай “В корзину” — счётчик сверху увеличится.</p>
+
+    <div class="grid">
+
+      <div class="product">
+        <img src="https://restokk.ru/images/catalog/30561/krossovki-zhenskie-nike-air-jordan-1-low-wmns-pink-white-1.jpg?v=824" alt="">
+        <h3>Nike Air Max</h3>
+        <p>Размеры: 36 37 38 39 40</p>
+        <p class="price">7 990 сом</p>
+        <button onclick="add('Nike Air Max')">В корзину</button>
+      </div>
+
+      <div class="product">
+        <img src="https://main-cdn.sbermegamarket.ru/big1/hlr-system/-76/033/165/991/323/58/100060152617b0.jpg" alt="">
+        <h3>Adidas Ultraboost</h3>
+        <p>Размеры: 37 38 39 40 41</p>
+        <p class="price">8 590 сом</p>
+        <button onclick="add('Adidas Ultraboost')">В корзину</button>
+      </div>
+
+      <div class="product">
+        <img src="https://inter-sport.s3.amazonaws.com/products/380738/black_71/380738-1_resized_400X400.png" alt="">
+        <h3>Puma RS-X</h3>
+        <p>Размеры: 36 37 38 39</p>
+        <p class="price">6 990 сом</p>
+        <button onclick="add('Puma RS-X')">В корзину</button>
+      </div>
+
+      <div class="product">
+        <img src="https://outmaxshop.ru/components/com_jshopping/files/img_products/34746/new-balance-9060-34746-1.jpg" alt="">
+        <h3>New Balance 574</h3>
+        <p>Размеры: 36 37 38 39 40</p>
+        <p class="price">6 490 сом</p>
+        <button onclick="add('New Balance 574')">В корзину</button>
+      </div>
+
+      <div class="product">
+        <img src="https://allkeds.ru/wa-data/public/shop/products/28/29/22928/images/98989/98989.970.jpg" alt="">
+        <h3>Converse Chuck 70</h3>
+        <p>Размеры: 35 36 37 38 39</p>
+        <p class="price">4 990 сом</p>
+        <button onclick="add('Converse Chuck 70')">В корзину</button>
+      </div>
+
+      <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT3yu-cQR1ZOgvj2_1HV4n5eFkT6MCdswtBQ&s" alt="">
+        <h3>Reebok Classic</h3>
+        <p>Размеры: 36 37 38 39 40 41</p>
+        <p class="price">5 790 сом</p>
+        <button onclick="add('Reebok Classic')">В корзину</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="register" class="page register-page">
+  <div class="main">
+    <h1>Регистрация</h1>
+
+    <p>Имя</p>
+    <input type="text" placeholder="Введите имя" required>
+
+    <p>Фамилия</p>
+    <input type="text" placeholder="Введите фамилию" required>
+
+    <p><i>Email</i></p>
+    <input type="email" placeholder="example@gmail.com" required>
+
+    <p>Пароль</p>
+    <input type="password" placeholder="Введите пароль" required>
+
+    <p>Город</p>
+    <select required>
+      <option value="" selected disabled>Выберите город</option>
+      <option>Ош</option>
+      <option>Бишкек</option>
+      <option>Жалал-Абад</option>
+      <option>Узген</option>
+      <option>Каракол</option>
+    </select>
+
+    <p>Возраст</p>
+    <div class="option">
+      <label><input type="radio" name="age" value="16"> 16</label>
+      <label><input type="radio" name="age" value="20"> 20</label>
+    </div>
+
+    <p>Хобби</p>
+    <div class="options">
+      <label><input type="checkbox" value="football"> Футбол</label>
+      <label><input type="checkbox" value="basketball"> Баскетбол</label>
+    </div>
+
+    <div class="wrapper">
+      <a href="#home">Жонотуу</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  var c = 0;
+
+  function add(name){
+    c++;
+    document.getElementById("count").textContent = c;
+    document.getElementById("count2").textContent = c;
+
+    document.getElementById("empty").style.display = "none";
+
+    var li = document.createElement("li");
+    li.textContent = c + ") " + name;
+    document.getElementById("list").appendChild(li);
+  }
+</script>
+
+</body>
+</html>
